@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mary Smith | Creative Digital Designer</title>
+	<meta name="description" content="Hi, I'm Mary, a UI and UX designer based in Dublin. Mobile and responsive web design, eCommerce websites, branding and logo design.">
+	<style>
+		:root {
+			--ink: #1f2933;
+			--muted: #65717d;
+			--paper: #f8f6f1;
+			--accent: #d8614a;
+			--accent-dark: #a84437;
+			--line: #d9d5cc;
+			--white: #fffdf9;
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+
+		html {
+			scroll-behavior: smooth;
+		}
+
+		body {
+			margin: 0;
+			color: var(--ink);
+			background: var(--paper);
+			font-family: Georgia, "Times New Roman", serif;
+			line-height: 1.6;
+		}
+
+		a {
+			color: inherit;
+		}
+
+		.site-header,
+		main,
+		.site-footer {
+			width: min(1120px, calc(100% - 3rem));
+			margin: 0 auto;
+		}
+
+		.site-header {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 1.75rem 0;
+			border-bottom: 1px solid var(--line);
+		}
+
+		.brand {
+			font-size: 1.1rem;
+			font-weight: 700;
+			letter-spacing: 0.04em;
+			text-decoration: none;
+			text-transform: uppercase;
+		}
+
+		.nav-link {
+			color: var(--muted);
+			font-family: Arial, sans-serif;
+			font-size: 0.75rem;
+			font-weight: 700;
+			letter-spacing: 0.12em;
+			text-decoration: none;
+			text-transform: uppercase;
+		}
+
+		.nav-link:hover,
+		.nav-link:focus-visible {
+			color: var(--accent-dark);
+		}
+
+		.hero {
+			display: grid;
+			grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
+			gap: 4rem;
+			align-items: end;
+			min-height: 68vh;
+			padding: 7rem 0 6rem;
+		}
+
+		.eyebrow {
+			margin: 0 0 1.5rem;
+			color: var(--accent-dark);
+			font-family: Arial, sans-serif;
+			font-size: 0.75rem;
+			font-weight: 700;
+			letter-spacing: 0.16em;
+			text-transform: uppercase;
+		}
+
+		h1,
+		h2,
+		h3,
+		p {
+			margin-top: 0;
+		}
+
+		h1 {
+			max-width: 760px;
+			margin-bottom: 1.5rem;
+			font-size: clamp(3.5rem, 10vw, 8.5rem);
+			font-weight: 400;
+			letter-spacing: -0.04em;
+			line-height: 0.9;
+		}
+
+		.intro {
+			max-width: 520px;
+			margin-bottom: 0;
+			color: var(--muted);
+			font-size: clamp(1.15rem, 2vw, 1.45rem);
+		}
+
+		.hero-note {
+			padding: 1.5rem 0 0 1.5rem;
+			border-left: 2px solid var(--accent);
+			color: var(--muted);
+			font-size: 1.05rem;
+		}
+
+		.hero-note strong {
+			display: block;
+			margin-bottom: 0.5rem;
+			color: var(--ink);
+			font-size: 1.35rem;
+			font-weight: 400;
+		}
+
+		.work {
+			padding: 4rem 0 7rem;
+			border-top: 1px solid var(--line);
+		}
+
+		.section-heading {
+			display: flex;
+			align-items: baseline;
+			justify-content: space-between;
+			gap: 1rem;
+			margin-bottom: 2rem;
+		}
+
+		h2 {
+			margin-bottom: 0;
+			font-size: clamp(2rem, 4vw, 3.5rem);
+			font-weight: 400;
+			letter-spacing: -0.03em;
+			line-height: 1;
+		}
+
+		.section-count {
+			color: var(--muted);
+			font-family: Arial, sans-serif;
+			font-size: 0.75rem;
+			letter-spacing: 0.12em;
+			text-transform: uppercase;
+		}
+
+		.project-list {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 1rem;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+		.project-link {
+			display: flex;
+			min-height: 250px;
+			flex-direction: column;
+			justify-content: space-between;
+			padding: 1.5rem;
+			background: var(--white);
+			border: 1px solid var(--line);
+			text-decoration: none;
+			transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+		}
+
+		.project-link:hover,
+		.project-link:focus-visible {
+			color: var(--white);
+			background: var(--accent);
+			border-color: var(--accent);
+			transform: translateY(-5px);
+		}
+
+		.project-number {
+			font-family: Arial, sans-serif;
+			font-size: 0.75rem;
+			font-weight: 700;
+			letter-spacing: 0.12em;
+			opacity: 0.7;
+		}
+
+		.project-title {
+			margin: 0;
+			font-size: clamp(1.8rem, 4vw, 3rem);
+			font-weight: 400;
+			line-height: 1;
+		}
+
+		.project-arrow {
+			align-self: flex-end;
+			font-family: Arial, sans-serif;
+			font-size: 1.5rem;
+		}
+
+		.site-footer {
+			display: flex;
+			justify-content: space-between;
+			gap: 1rem;
+			padding: 1.5rem 0 2rem;
+			border-top: 1px solid var(--line);
+			color: var(--muted);
+			font-family: Arial, sans-serif;
+			font-size: 0.75rem;
+			letter-spacing: 0.08em;
+			text-transform: uppercase;
+		}
+
+		@media (max-width: 700px) {
+			.site-header,
+			main,
+			.site-footer {
+				width: min(100% - 2rem, 1120px);
+			}
+
+			.hero {
+				display: block;
+				min-height: auto;
+				padding: 5rem 0 4rem;
+			}
+
+			.hero-note {
+				max-width: 300px;
+				margin-top: 4rem;
+			}
+
+			.project-list {
+				grid-template-columns: 1fr;
+			}
+
+			.project-link {
+				min-height: 200px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<header class="site-header">
+		<a class="brand" href="index.html">Mary Smith</a>
+		<a class="nav-link" href="#work">Selected work</a>
+	</header>
+
+	<main>
+		<section class="hero" aria-labelledby="intro-title">
+			<div>
+				<p class="eyebrow">Creative digital designer / Dublin</p>
+				<h1 id="intro-title">Hi, I'm Mary Smith</h1>
+				<p class="intro">I create thoughtful digital experiences, memorable identities, and websites that feel as good as they work.</p>
+			</div>
+			<p class="hero-note"><strong>Web / UI Designer</strong>Mobile and responsive web design, eCommerce websites, branding, and logo design.</p>
+		</section>
+
+		<section class="work" id="work" aria-labelledby="work-title">
+			<div class="section-heading">
+				<h2 id="work-title">Sample web pages</h2>
+				<span class="section-count">02 projects</span>
+			</div>
+			<ul class="project-list">
+				<li>
+					<a class="project-link" href="exercises/page-1.html">
+						<span class="project-number">01 / Literature</span>
+						<h3 class="project-title">A Tale of Two Cities</h3>
+						<span class="project-arrow" aria-hidden="true">&#8599;</span>
+					</a>
+				</li>
+				<li>
+					<a class="project-link" href="exercises/page-2.html">
+						<span class="project-number">02 / Music</span>
+						<h3 class="project-title">Purple Rain</h3>
+						<span class="project-arrow" aria-hidden="true">&#8599;</span>
+					</a>
+				</li>
+			</ul>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<span>Mary Smith</span>
+		<span>Digital design &copy; 2026</span>
+	</footer>
+</body>
+</html>
